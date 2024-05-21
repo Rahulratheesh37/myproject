@@ -1,0 +1,38 @@
+[
+    {
+        "Username": "rahul",
+        "email": "user@gmail.com",
+        "password": "LLLqwert@123",
+        "password2": "LLLqwert@123"
+    },
+    {
+        "Username": "name",
+        "email": "name@gmail.com",
+        "password": "Model@123",
+        "password2": "Model@123"
+    },
+    {
+        "Username": "huwa",
+        "email": "fpppp@gmail.com",
+        "password": "Model@123",
+        "password2": "Model@123"
+    },
+    {
+        "Username": "huws",
+        "email": "named@gmail.com",
+        "password": "Model@123",
+        "password2": "Model@123"
+    },
+    {
+        "Username": "huww",
+        "email": "model@gmail.com",
+        "password": "Adhil@123",
+        "password2": "Adhil@123"
+    },
+    {
+        "Username": "NOEL",
+        "email": "noel@gmail.com",
+        "password": "NNNqwert@123",
+        "password2": "NNNqwert@123"
+    }
+]

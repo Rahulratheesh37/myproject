@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome,<%= user.Username %>
+    </title>
+    <link rel="stylesheet" href="css/welcome.css">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome,<%= user.Username %>
+        </h1>
+    </header>
+
+    <section class="user-details">
+        <h2>User Details</h2>
+        <ul>
+            <%if (user.email){%>
+                 <li><strong>User Email:</strong>
+                <%= user.email %>
+               
+                <% }%>
+            
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Logged in as <%= user.username %>. <a href="/logout">Logout</a></p>
+    </footer>
+</body>
+
+</html>

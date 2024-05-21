@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+  <link rel="stylesheet" href="css/signup.css">
+  <title>Creative Colorlib SignUp Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script
+    type="application/x-javascript"> addEventListener("load", function(){setTimeout(hideURLbar,0);},false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <!-- Custom Theme files -->
+  <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+  <!-- //Custom Theme files -->
+  <!-- web font -->
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+  <!-- //web font -->
+</head>
+
+<body>
+  <!-- main -->
+  <div class="main-w3layouts wrapper">
+    <h1>Creative SignUp Form</h1>
+    <div class="main-agileinfo">
+      <div class="agileits-top">
+
+        <form action="#" method="post" id="form" onsubmit="validate()">
+           <label>user</label>
+          <input class="text" type="text" name="Username" id="Username" >
+          <small id="nameerror" class="signupvalidation"></small>
+
+          <input class="text email" type="text" name="email" id="email" placeholder="Email">
+          <small id="emailerror" class="signupvalidation"></small>
+
+          <% if (errorm?.emailError) { %>
+            <div class="errorv">
+              <p style="color:brown;">
+                <%= errorm.emailError%>
+              </p>
+            </div>
+            <% } %>
+
+              <input class="text" type="password" name="password" id="password" placeholder="Password">
+              <small id="passerror" class="signupvalidation"></small>
+
+              <% if (errorm?.perror){%>
+                <div class="errorv">
+                  <p style="color: brown;">
+                    <%=errorm.perror%>
+                  </p>
+                </div>
+                <%}%>
+
+
+                  <input class="text w3lpass" id="password2" type="password" name="password2" placeholder="">
+                  <small id="pass2error" class="signupvalidation"></small>
+                  <%if (errorm?.cperror){%>
+                    <div class="errorv">
+                      <p style="color: brown;">
+                        <%= errorm.cperror %>
+                      </p>
+                    </div>
+                    <% }%>
+                      <div class="wthree-text">
+                        <label class="anim">
+
+                          <input type="checkbox" class="checkbox">
+                          <span>I Agree To The Terms & Conditions</span>
+
+                        </label>
+                        <div class="clear"></div>
+                      </div>
+
+                      <input type="submit" class="submit" onchange="validate(event)">
+
+
+
+                      <!-- <button onclick="return validateForm(event)" type="submit">signup</button> -->
+
+        </form>
+        <p>Don't have an Account? <a href="#"> Login Now!</a></p>
+      </div>
+    </div>
+    <!-- copyright -->
+    <div class="colorlibcopy-agile">
+      <p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/"
+          target="_blank">Colorlib</a></p>
+    </div>
+
+    </ul>
+  </div>
+
+
+
+  <!-- //main -->
+
+  <script>
+    function validate() {
+      const usersname = document.getElementById("Username").value;
+      const uerror = document.getElementById('nameerror');
+
+      const usersemail = document.getElementById("email").value;
+      const uemail = document.getElementById('emailerror');
+
+      const userspassword = document.getElementById("password").value;
+      const upassword = document.getElementById('passerror');
+
+      const userspassword2 = document.getElementById("password2").value;
+      const p2error = document.getElementById('pass2error');
+
+      if (usersname === '') {
+        uerror.innerText = "USER NAME IS EMPTY";
+        event.preventDefault()
+      } else if (usersname.length < 4) {
+        uerror.innerText = "Username is too short, must be at least 4 characters";
+        event.preventDefault()
+      } else {
+        uerror.innerText = ''
+      }
+
+      var emailFormat = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+      if (usersemail === '') {
+        uemail.innerText = 'email is empty';
+        event.preventDefault()
+      } else if (!emailFormat.test(usersemail)) {
+        uemail.innerText = "INVALID EMAIL ID";
+        event.preventDefault()
+      } else {
+        uemail.innerText = ''
+      }
+      var regexpassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      if (userspassword === '') {
+        upassword.innerText = "password can't be empty";
+        event.preventDefault()
+      } else if (!regexpassword.test(userspassword)) {
+        upassword.innerText = 'password must contain uppercase, lowercase, one digit, and special character';
+        event.preventDefault()
+      } else if (userspassword !== userspassword2) {
+        p2error.innerText = "Passwords do not match";
+       event.preventDefault()
+      } else {
+        upassword.innerText = '';
+      }
+    }
+
+  </script>
+
+
+
+
+
+</body>
+
+</html>
